@@ -2,7 +2,7 @@
 
 Đây là mẫu $\LaTeX$ template cho slide trình bày báo cáo LATS. Nó không phải là mẫu chính thức của ITMO University (Hiện tại trường cũng không yêu cầu và cũng ko có mẫu chính thức). Tuy nhiên việc trình bày slide báo cáo bằng $\LaTeX$ rất được hoan nghêng, và template này đã được 02 Tiến sĩ trình bày trong hội đồng báo cáo LATS của khoa điều khiển (tính đến ngày 28.11.2024) với sự đánh giá tốt về cách trình bày.
 
-PhD Thesis Presentation template là sự kế thừa từ template $\LaTeX$ tại [ITMO-Beamer-theme](https://github.com/AlexZabashta/ITMO-Beamer-theme). Cảm ơn tác giả `ITMO-Beamer-theme` đã public template này.
+PhD Thesis Presentation template là sự kế thừa từ template $\LaTeX$ tại [ITMO-Beamer-theme](https://github.com/AlexZabashta/ITMO-Beamer-theme). Cảm ơn tác giả `@AlexZabashta` đã public template này.
 
 ## How to use
 
