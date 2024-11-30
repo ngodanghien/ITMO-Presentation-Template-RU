@@ -1,6 +1,8 @@
 # PhD Thesis Presentation template for ITMO University
 
-Đây là mẫu $\LaTeX$ template cho slide trình bày báo cáo LATS. Nó không phải là mẫu chính thức của ITMO University (Hiện tại trường ĐH cũng không yêu cầu và cũng ko có mẫu chính thức). Tuy nhiên việc trình bày báo cáo bằng slide của $\LaTeX$ là rất được hoan nghêng, và template này đã được 02 Tiến sĩ trình bày trong hội đồng báo cáo LATS của khoa điều khiển (tính đến ngày 28.11.2024) với sự đánh giá tốt về cách trình bày.
+Đây là mẫu $\LaTeX$ template cho slide trình bày báo cáo LATS. Nó không phải là mẫu chính thức của ITMO University (Hiện tại trường cũng không yêu cầu và cũng ko có mẫu chính thức). Tuy nhiên việc trình bày slide báo cáo bằng $\LaTeX$ rất được hoan nghêng, và template này đã được 02 Tiến sĩ trình bày trong hội đồng báo cáo LATS của khoa điều khiển (tính đến ngày 28.11.2024) với sự đánh giá tốt về cách trình bày.
+
+PhD Thesis Presentation template là sự kế thừa từ template $\LaTeX$ tại [ITMO-Beamer-theme](https://github.com/AlexZabashta/ITMO-Beamer-theme). Cảm ơn tác giả `ITMO-Beamer-theme` đã public template này.
 
 ## How to use
 
@@ -13,7 +15,7 @@ Recommended uses: [TexStudio](https://www.texstudio.org/) and [TexLive](https://
 - Change the bibliography engine from `bibtex` to `biber`
 ##
 - Ưu tiên sử dụng `TexStudio` làm môi trường IDE và `Texlive` làm complier cho $\LaTeX$. 
- - Phần in các ấn phẩm đã xuất bản, sử dụng file `*.bib` với `biber` làm trình biên dịch để theo style của GOST-2008. Có thể làm bằng tay nếu ko thích, hoặc số lượng báo chí public quá nhiều`
+ - Phần in các ấn phẩm đã xuất bản, sử dụng file `*.bib` với `biber` làm trình biên dịch để theo style của GOST-2008. Có thể làm bằng tay (nếu ko thích tự động), hoặc số lượng báo chí public nhiều (1 frame ko thể hiện hết được).
 
 ## Những lưu ý về cách sử dụng
 1. Thay đổi các thông tin các nhân của mình trong file `author.tex`
