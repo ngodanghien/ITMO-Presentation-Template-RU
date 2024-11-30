@@ -1,0 +1,113 @@
+\begin{frame}{Обзор существующих методов} \hypertarget{slide\insertframenumber}{}
+	%	\scriptsize
+	\begin{tabular}{|m{10cm}|m{4.4cm}|}
+		%		\hline
+		%	& Матрица состояния генератора \\
+		\hline
+		Ortega R., Loria A., Nicklasson P. J., Sira-Ramirez H. Generalized AC
+		motor // Passivity-based Control of Euler-Lagrange Systems: Mechanical,
+		Electrical and Electromechanical Applications. — London : Springer London,
+		1998. — С. 265—309. & Параметрическая \redcolor{определенность} модели, Матрица входов -- \redcolor{обратная функция} \\
+		\hline
+		Данг Б. [др]. Метод синтеза адаптивных наблюдателей для нестационарных систем с полиномиальными параметрами [10.2021] &	Собственные числа матрицы состояния генератора параметров \redcolor{известны} и \redcolor{все равны 0}  \\
+		\hline
+		Низовцев С.И., Адаптивные наблюдатели линейных нестационарных систем в условиях неизмеряемых возмущений [12.2021] 
+		
+		Pyrkin A., Bobtsov A., Ortega R., Isidori A. An adaptive observer for uncertain linear time-varying systems with unknown additive perturbations//Automatica, 2023, Vol. 147, pp. 110677 & Собственные числа матрицы состояния генератора параметров  могут иметь \bluecolor{произвольные} значения, но \redcolor{известны} \\
+		\hline
+		Gerasimov D., Popov A., Hien N.D., Nikiforov V. Adaptive control of LTV systems with uncertain periodic coefficients //IFAC-PapersOnLine, 2023, Vol. 56, No. 2, pp. 9185-9190 & Матрица состояния \bluecolor{переменная}, матрица входов \redcolor{постоянная},  \redcolor{доступен измерению \par вектор состояния } \\
+		\hline
+		Нгуен Х.Т. Адаптивное оценивание нестационарных параметров с использованием метода внутренней модели [06.2023] & Собственные числа могут иметь \bluecolor{произвольные} значения и \bluecolor{неизвестны}, но для \par \redcolor{дискретной} модели \\
+		\hline
+		
+	\end{tabular}
+\end{frame}
+
+%\section*{Научная новизна}
+\begin{frame}{Научная новизна} \hypertarget{slide\insertframenumber}{}
+	\textbf{Научная новизна} 
+	\vspace*{0.5cm}
+	\begin{itemize}
+		\item 	 Разработка новых алгоритмов управления по выходу для класса нестационарных моделей на основе адаптивного наблюдателя переменных параметров, описываемых автономным или управляемым генератором с неизвестными начальными условиями и матрицей состояния.
+		\vspace*{2mm}
+		\item  Разработка нового метода параметризации модели генератора к виду линейного регрессионного соотношения, в котором вектор неизвестных параметров соответствует параметрам генератора.
+		\vspace*{2mm}
+		\item  Синтез закона управления по выходу для нестационарного объекта с неизвестными параметрами, предполагающий включение в контур управления цепочки интеграторов и гарантирующий асимптотическую устойчивость замкнутой системы.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Обобщенная постановка задачи}	\hypertarget{slide\insertframenumber}{}
+	Рассматривается неафинный по входу объект управления
+	\begin{align}
+		\label{plant_x}
+		\dot x(t) &= \redcolor{A}x(t) + \redcolor{B(t)} u(t),\\
+		\label{plant_y}
+		y(t) &= Cx(t),
+	\end{align}
+	где  $x(t)\in\rea^k$ ---  вектор переменных состояния,  $y\left( t \right) \in \rea{^m}$ --- измеримый вектор выходных регулируемых переменных,  $u\left( t \right) \in\rea {^\ell}$ ---   управляющих воздействий, элементы матрицы $A$ могут быть неизвестны, $B(\xi(t),u): \rea^{k\times\ell}$ --- матрица входов с переменными и неизвестными параметрами, $\xi(t) \in \rea^n$ --- вектор переменных состояния входной динамики, описываемой соотношением
+	\begin{align}
+		\label{Bxiu}
+		\redcolor{B(t)} &= B_0\,H(\xi(t)),\\
+		\label{xi}
+		\dot{\xi}(t) &=\redcolor{\Gamma}\xi(t) +Gu(t),
+	\end{align}
+	где элементы матрицы $\Gamma$ могут быть неизвестны, $B_0\in\rea^{k\times r}$ --- известная матрица, $H(\xi(t)): \rea^n \to \rea^{r\times \ell}$
+\end{frame}
+
+\begin{frame} \hypertarget{slide\insertframenumber}{}
+	Желаемое поведение выходной переменной $y^*(t)$ задано в виде выхода линейного генератора с состоянием $\xi_y(t)\in \rea^q$ и заданными параметрами $h_y\in\rea^{q\times m}$, $\Gamma_y \in\rea^{q\times q}$, $\xi_y(0)\in \rea^q$:
+	\begin{align}\label{xi_star}
+		\dot \xi_y(t)&=\Gamma_y\xi_y(t),\\
+		\label{y_star}
+		y^*(t)&=h_y^\top\xi_y(t).
+	\end{align}
+	
+	Требуется синтезировать закон управления $u(t)$ по выходу,
+	гарантирующий ограниченность всех переменных состояния, а также асимптотическое слежение регулируемой переменной $y(t)$ за задающим воздействием $y^*$:
+	\begin{align}
+		\label{goal}
+		\mathop {\lim }\limits_{t \to \infty } \left( {A  - \hat A(t)} \right) = 0, \;
+		\mathop {\lim }\limits_{t \to \infty } \left( {B(t)  - \hat B(t)} \right) = 0, \;
+		\mathop {\lim }\limits_{t \to \infty } \left( {y(t)  - y^*(t)} \right) = 0.
+	\end{align}
+\end{frame}
+
+
+\section{Задача 1}%: Синтез закона адаптивного управления по выходу для линейного нестационарного объекта с управляемым генератором переменных параметров с известной матрицей состояния.}
+\begin{frame} \hypertarget{slide\insertframenumber}{}
+	\centering
+	\LARGE Задача 1: Синтез закона адаптивного управления по выходу для линейного нестационарного объекта с управляемым генератором переменных параметров с известной матрицей состояния.
+\end{frame}
+\begin{frame}{Постановка задачи}
+	Рассматривается объект управления
+	\begin{align}
+		\label{2.1}
+		\dot x(t) &= Ax(t) + B(t)u(t),\\
+		\label{2.2}
+		y(t) &= C^\top x(t),
+	\end{align}
+	$B(t)=B(\xi(t),u)$ --- матрица входов с переменными параметрами, описываемой соотношением
+	\begin{align}	\label{2.3}
+		B(t) &= B_0 \,  \xi^\top (t) H,\\
+		\label{2.4}
+		\dot \xi(t) &=\Gamma \xi(t)+Gu(t),
+	\end{align}
+	с тем же управляющим входом $u(t)$, известными матрицами $ \Gamma, G$ соответствующих размерностей и неизвестными начальными условиями $\xi(0)$, с некоторым известным вектором $ B_0 \in \rea^k$ и матрицей $H\in\rea^{n \times \ell}$.
+	
+\end{frame}
+
+
+\begin{frame} \hypertarget{slide\insertframenumber}{}
+	%\small
+	\begin{assumption}
+		\label{ass1}
+		Функция $B(t)$ такая, что матрица $B_0$ известна, пара $(A,B_0)$ является полностью управляемой, а также существует псевдообратное отображение $H^L(\xi,\tau):\rea^n\times\rea^r\to\rea^\ell$, удовлетворяющее соотношению
+		\[	H\left(\xi\right)H^L(\xi,\tau)=\tau \]	
+		для некоторой переменной $\tau\in\rea^r$ и $\forall\xi$.
+	\end{assumption}
+	\begin{assumption}
+		\label{ass2}
+		Пара матриц $(A, C)$ является полностью наблюдаемой.
+	\end{assumption}
+\end{frame}

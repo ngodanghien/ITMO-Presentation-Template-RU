@@ -1,0 +1,75 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\include{itmo/setup.tex}
+\include{sections/author.tex}	%modify user in here!
+\include{sections/custom.tex}
+
+\usefonttheme{professionalfonts}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\insertpagetitle
+	\insertoutline
+	%%%%[slide 2]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	\section{Актуальность исследования}
+	\setfootlinetext{Актуальность исследования}
+	\input{sections/section1.tex}
+	
+	\section{Обзор существующих методов}
+	\setfootlinetext{Обзор существующих методов}
+	\input{sections/section2.tex}
+	
+	%%%%[Задача 1]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Задача 1}
+	\setfootlinetext{Задача 1}
+	\begin{frame} \hypertarget{slide\insertframenumber}{}
+	\centering
+	\LARGE Задача 1: Синтез закона адаптивного управления по выходу для линейного нестационарного объекта с управляемым генератором переменных параметров с известной матрицей состояния.
+	\end{frame}
+	%================================
+	\input{sections/section3.tex}
+	%%%%[Задача 2]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Задача 2}
+	\setfootlinetext{Задача 2}
+	\begin{frame} \hypertarget{slide\insertframenumber}{}
+	\centering
+	\LARGE Задача 2: 
+	\end{frame}
+	%================================
+	\input{sections/section4.tex}
+	%%%%[Задача 3]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Задача 3}
+	\setfootlinetext{Задача 3}
+	\begin{frame} \hypertarget{slide\insertframenumber}{}
+		\centering
+		\LARGE Задача 3: 
+	\end{frame}
+	%================================
+	\input{sections/section5.tex}
+	%%%%[Задача 4]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	%%%%[Заключение]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Заключение}
+	\setfootlinetext{Заключение}
+	\begin{frame}{Заключение}
+	%\begin{frame}{Положения, выносимые на защиту.}
+		\hypertarget{slide\insertframenumber}{}
+		\begin{itemize}
+			\item Алгоритм управления по выходу для нестационарного объекта с переменной матрицей входа, параметры которой являются выходом управляемого генератора с известной матрицей состояния.
+			\vspace*{2mm}
+			\item  Адаптивный наблюдатель производных выходной регулируемой переменной для нестационарного объекта с оцениванием мгновенных значений переменных элементов матрицы входа.
+			\vspace*{2mm}
+			\item Алгоритм управления по выходу для нестационарного объекта с переменной матрицей входа, параметры которой являются выходом управляемого генератора с неизвестными матрицами состояния и начальными условиями.
+		\end{itemize}
+	\end{frame}
+	
+	\section{Полученные научные результаты}
+	\setfootlinetext{Полученные научные результаты}
+	\printPapers
+	\printConferenceRU
+	\insertpagethanks
+	% Table of Contents page with links in 4 columns
+	\input{sections/slides.tex}
+	
+\end{document}

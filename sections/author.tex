@@ -1,0 +1,96 @@
+%Information author
+\def\thesisname{Адаптивное управление системами с переменными параметрами}
+\def\thesisauthor{Нго Данг Хиен}%, аспирант, 2-й год, факультет ФСУиР}
+\def\supervisor{Герасимов Дмитрий Николаевич, доцент, к.т.н}%кандидат технических наук}
+\def\speciality{2.3.1\par Системный анализ, управление и обработка информации, статистика}
+%\dpartment{факультет систем управления и робототехники}
+\def\email{hiennd@itmo.ru}
+\def\where{Санкт-Петербург}
+%\def\days{24 июня 2024}
+\newcommand{\days}{\today}
+
+%Tilte
+\newcommand{\insertpagetitle}{
+	\begin{frame}[plain,noframenumbering]
+		\centering
+		\itmopolygons{
+			\begin{center}
+				\vspace*{10pt}
+				\includegraphics[scale=0.1]{itmo/logo-basic-russian-white.pdf}
+				\vfill
+				
+				{\bf \large \thesisauthor} \par
+				\vspace*{10pt}
+				
+				{\bf \Large \thesisname} \par
+				\vspace*{15pt}
+				
+				{Специальность: \speciality} \par
+				\vspace*{15pt}
+				
+				{Научный руководитель: \par	\supervisor} \par
+				
+				\vfill
+				\where, \days
+				\vspace*{5pt}
+			\end{center}
+		}
+	\end{frame}
+}
+%Outline
+\newcommand{\insertoutline}{
+	%\begin{frame}[label=toc]{Оглавление}%{План доклада}%{Outline}%[plain,noframenumbering]
+		%\frametitle{Outline}
+	%\begin{frame}[plain,noframenumbering]{Оглавление}
+	\begin{frame}{Оглавление}
+		\hypertarget{slide\insertframenumber}{}
+		%\setbeamercolor{background canvas}{bg=blue}
+		\large %\Large
+		\tableofcontents
+	\end{frame}
+}
+%Thanks
+\newcommand{\insertpagethanks}{
+	\begin{frame}[plain,noframenumbering]%{Вопросы?}
+		\centering
+		\itmopolygons{
+			\begin{center}
+				\vspace*{30pt}
+				\begin{center}
+					\textcolor{ITMOwhite}{\huge\textbf{Спасибо за внимание!}}
+				\end{center}
+				
+				\vspace*{50pt}
+				%			\begin{flushright}
+					%				\textcolor{ITMOwhite}{E-mail: hiennd@itmo.ru}
+					%			\end{flushright}
+				\begin{exampleblock}{Контакты}
+					\textcolor{ITMOwhite}{E-mail: \email}
+				\end{exampleblock}
+				\vspace*{10pt}
+				\begin{figure}%[hb!]
+					\centering
+					\includegraphics[scale=.1]{itmo/slogan-white.pdf}
+			\end{figure}
+		\end{center}
+	}
+	\end{frame}
+}
+%=====================================================================
+\newcommand{\printPapers}{
+	\begin{frame}{Публикации по теме работы} \hypertarget{slide\insertframenumber}{}
+		\nocite{*}
+		\printbibliography
+	\end{frame}
+}
+\newcommand{\printConferenceRU}{
+	\begin{frame}{Апробация работы} \hypertarget{slide\insertframenumber}{}
+		\begin{enumerate}
+			\item \textcolor{blue}{The 22nd IFAC World Congress}, Yokohama, Japan.  9–-14 июля 2023 г.
+			\item \textcolor{blue}{The 63rd IEEE Conference on Decision and Control (CDC-2024)}, Milan, Italy. 16--19 декабря 2024 г.
+			\item \textcolor{blue}{XIV Всероссийское совещание по проблемам управления (ВСПУ-2024)}, Россия, Москва, ИПУ РАН. 17--20 июня 2024 г.
+		\end{enumerate}
+		
+	\end{frame}
+}
+

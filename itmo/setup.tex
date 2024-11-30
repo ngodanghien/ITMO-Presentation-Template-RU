@@ -1,0 +1,39 @@
+\usepackage{itmo/ITMOtheme}
+
+\usepackage{pdflscape}		% pdfpages package requires the following packages
+\usepackage{pdfpages}       %This package simplifies the insertion of external multi-page 
+\usepackage{graphics}
+\usepackage{subcaption}
+\usepackage{array}
+
+\usepackage{caption}
+\captionsetup{skip=0.5pt}  % Set the space to 2 points
+
+\usepackage[%
+backend=biber, bibencoding=utf8,
+sorting=none, style=gost-numeric,
+%language=autobib,  autolang=other,
+%clearlang=true,  defernumbers=true,
+sortcites=true,
+doi=false,
+url=false, % add new: + doi, - url
+isbn=false,
+giveninits=true,
+maxbibnames=99,
+movenames=false, %Put the author's name first.
+]{biblatex}
+\addbibresource{papers.bib}
+
+\hypersetup{
+	unicode=true,
+	colorlinks=true, % to remove []
+	linkcolor = ITMOred,
+	citecolor = ITMOgreen,
+	urlcolor = ITMOblue,
+}
+
+%\setfootlinetext{Факультет систем управления и робототехники}
+%\setfootlinetext{\insertsection}
+%Thêm tùy chọn allowframebreaks vào môi trường frame để cho phép Beamer tự động chia nội dung thành nhiều frame khi cần thiết.
+%\begin{frame}[allowframebreaks]{Frame with Long Content}
+
